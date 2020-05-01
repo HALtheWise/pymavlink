@@ -2150,7 +2150,7 @@ class x25crc(object):
         if isinstance(buf, array.array):
             byte_buf.extend(buf)
         else:
-            byte_buf.fromstring(buf)
+            byte_buf.frombytes(buf)
         accum = self.crc
         for b in byte_buf:
             tmp = b ^ (accum & 0xff)
